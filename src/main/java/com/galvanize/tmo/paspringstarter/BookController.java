@@ -15,19 +15,19 @@ public class BookController {
 	BookService bookService;
 
 	// to post
-	@RequestMapping(method = RequestMethod.POST, value = "/book")
+	@RequestMapping(method = RequestMethod.POST, value = "/api/books")
 	public void postTo(@RequestBody Book book) {
 		bookService.addToList(book);
 	}
 
 	// get all books sorted alphabetically by title
-	@RequestMapping("/books")
+	@RequestMapping("/api/books")
 	public List<Book> getListOfTopics() {
 		return bookService.getAllBooks();
 	}
 
 	// delete all books
-	@RequestMapping("/deleteAllBooks")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/api/books")
 	public void deleteAll() {
 		bookService.deleteAllBooks();
 	}
