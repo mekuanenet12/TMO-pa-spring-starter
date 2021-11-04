@@ -2,11 +2,14 @@ package com.galvanize.tmo.paspringstarter;
 
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 public class BookController {
@@ -16,10 +19,10 @@ public class BookController {
 
 	// to post
 	@RequestMapping(method = RequestMethod.POST, value = "/api/books")
-	public Book postTo(@RequestBody Book book) {
+	public ResponseEntity<Book> postTo(@RequestBody Book book) {
 		book.id = bookService.bookList.size() + 1;
 		bookService.addToList(book);
-		return book;
+		return ResponseEntity.ok(book);
 	}
 
 	// get all books sorted alphabetically by title
