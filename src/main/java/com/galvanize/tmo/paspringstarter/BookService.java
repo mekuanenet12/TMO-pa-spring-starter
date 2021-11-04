@@ -10,10 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookService {
 
-	public List<Book> bookList = new ArrayList<>(
-			Arrays.asList(new Book(2, "Philip K. Dick", "Do Androids Dream of Electric Sheep?", "1968"),
-					new Book(3, "William Gibson", "Neuromancer", "1984"),
-					new Book(1, "Zouglas Adams", "The Hitchhiker's Guide to the Galaxy", "1979")));
+	public List<Book> bookList = new ArrayList<>();	;
 
 	// post one
 	public void addToList(Book book) {
