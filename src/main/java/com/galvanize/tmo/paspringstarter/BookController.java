@@ -15,35 +15,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BookController {
 
-	@Autowired
-	BookService bookService;
+    @Autowired
+    BookService bookService;
 
-	/// to post
+    // to post
+    @RequestMapping(method = RequestMethod.POST, value = "/api/books")
+    public ResponseEntity<Book> createBook(@RequestBody Book book) {
+        book.id = bookService.bookList.size() + 1;
+        bookService.addToList(book);
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
+    }
+
+    // get all books sorted alphabetically by title
+    @RequestMapping("/api/books")
+    public ResponseEntity<List<Book>> getListOfBooks() {
+        return new ResponseEntity<>(bookService.getAllBooksSortedByTitle(), HttpStatus.OK);
+    }
+
+    // delete all books
+    @RequestMapping(method = RequestMethod.DELETE, value = "/api/books")
+    public ResponseEntity<Book> deleteAll() {
+        bookService.deleteAllBooks();
+        return new ResponseEntity<Book>(HttpStatus.NO_CONTENT);
+    }
+    /// to post
 //	@RequestMapping(method = RequestMethod.POST, value = "/api/books")
 //	public ResponseEntity<List<Book>> createBook(@RequestBody Book book) {
 //		book.id = bookService.bookList.size() + 1;
 //		bookService.addToList(book);
 //		return new ResponseEntity<>(bookService.getAllBooksSortedByTitle(), HttpStatus.CREATED);
 //	}
-	// to post
-	@RequestMapping(method = RequestMethod.POST, value = "/api/books")
-	public ResponseEntity<Book> createBook(@RequestBody Book book) {
-		book.id = bookService.bookList.size() + 1;
-		bookService.addToList(book);
-		return new ResponseEntity<>(book, HttpStatus.CREATED);
-	}
-
-	// get all books sorted alphabetically by title
-	@RequestMapping("/api/books")
-	public ResponseEntity<List<Book>> getListOfBooks() {
-		return new ResponseEntity<>(bookService.getAllBooksSortedByTitle(), HttpStatus.OK);
-	}
-
-	// delete all books
-	@RequestMapping(method = RequestMethod.DELETE, value = "/api/books")
-	public ResponseEntity<Book> deleteAll() {
-		bookService.deleteAllBooks();
-		return new ResponseEntity<Book>(HttpStatus.NO_CONTENT);
-	}
 
 }

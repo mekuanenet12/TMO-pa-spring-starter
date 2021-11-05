@@ -10,36 +10,34 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookService {
 
-	public List<Book> bookList = new ArrayList<>();	;
+    public List<Book> bookList = new ArrayList<>();
 
-	// post one
-	public void addToList(Book book) {
-		
-		bookList.add(book);
-	}
+    // post one
+    public void addToList(Book book) {
 
-	// get all sorted by book title
-	public List<Book> getAllBooksSortedByTitle() {
-		Collections.sort(bookList, new BookComparator());
-		return bookList;
-	}
+        bookList.add(book);
+    }
 
-	// to delete all
-	public void deleteAllBooks() {
-		bookList.clear();
-	}
+    // get all sorted by book title
+    public List<Book> getAllBooksSortedByTitle() {
+        Collections.sort(bookList, new BookComparator());
+        return bookList;
+    }
 
-	public Book getBookById(int id) {
+    // to delete all
+    public void deleteAllBooks() {
+        bookList.clear();
+    }
 
-		for(int i=0;i<bookList.size();i++)
-		{
-			if(bookList.get(i).id == id)
-			{
-				return bookList.get(i);
-			}
-		}
+    public Book getBookById(int id) {
 
-		return null;
-	}
+        for (int i = 0; i < bookList.size(); i++) {
+            if (bookList.get(i).id == id) {
+                return bookList.get(i);
+            }
+        }
+
+        return null;
+    }
 
 }

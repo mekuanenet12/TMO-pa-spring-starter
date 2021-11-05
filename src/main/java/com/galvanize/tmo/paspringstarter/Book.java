@@ -1,50 +1,50 @@
 package com.galvanize.tmo.paspringstarter;
 
 public class Book {
-	
-	int id;
-	String author;
-	String title;
-	int yearsPublished;
 
-	public Book(int id, String author, String title, int yearsPublished) {
-		super();
-		this.id = id;
-		this.author = author;
-		this.title = title;
-		this.yearsPublished = yearsPublished;
-	}
+    int id;
+    String author;
+    String title;
+    int yearsPublished;
 
-	public int getId() {
-		return id;
-	}
+    public Book(int id, String author, String title, int yearsPublished) {
+        super();
+        this.id = id;
+        this.author = author;
+        this.title = title;
+        this.yearsPublished = yearsPublished;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getAuthor() {
-		return author;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+    public String getAuthor() {
+        return author;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public int getYearsPublished() {
-		return yearsPublished;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setYearsPublished(int yearsPublished) {
-		this.yearsPublished = yearsPublished;
-	}
+    public int getYearsPublished() {
+        return yearsPublished;
+    }
+
+    public void setYearsPublished(int yearsPublished) {
+        this.yearsPublished = yearsPublished;
+    }
 
 }
