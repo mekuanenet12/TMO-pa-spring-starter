@@ -18,6 +18,13 @@ public class BookController {
 	@Autowired
 	BookService bookService;
 
+	/// to post
+//	@RequestMapping(method = RequestMethod.POST, value = "/api/books")
+//	public ResponseEntity<List<Book>> createBook(@RequestBody Book book) {
+//		book.id = bookService.bookList.size() + 1;
+//		bookService.addToList(book);
+//		return new ResponseEntity<>(bookService.getAllBooksSortedByTitle(), HttpStatus.CREATED);
+//	}
 	// to post
 	@RequestMapping(method = RequestMethod.POST, value = "/api/books")
 	public ResponseEntity<Book> createBook(@RequestBody Book book) {
@@ -36,7 +43,7 @@ public class BookController {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/api/books")
 	public ResponseEntity<Book> deleteAll() {
 		bookService.deleteAllBooks();
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<Book>(HttpStatus.NO_CONTENT);
 	}
 
 }
