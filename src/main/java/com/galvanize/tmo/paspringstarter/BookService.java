@@ -19,7 +19,7 @@ public class BookService {
 	}
 
 	// get all sorted by book title
-	public List<Book> getAllBooks() {
+	public List<Book> getAllBooksSortedByTitle() {
 		Collections.sort(bookList, new BookComparator());
 		return bookList;
 	}
@@ -27,6 +27,19 @@ public class BookService {
 	// to delete all
 	public void deleteAllBooks() {
 		bookList.clear();
+	}
+
+	public Book getBookById(int id) {
+
+		for(int i=0;i<bookList.size();i++)
+		{
+			if(bookList.get(i).id == id)
+			{
+				return bookList.get(i);
+			}
+		}
+
+		return null;
 	}
 
 }
