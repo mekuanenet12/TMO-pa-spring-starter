@@ -29,15 +29,14 @@ public class BookService {
         bookList.clear();
     }
 
-    public Book getBookById(int id) {
-
-        for (int i = 0; i < bookList.size(); i++) {
-            if (bookList.get(i).id == id) {
-                return bookList.get(i);
-            }
-        }
-
-        return null;
-    }
+//    public Book getBookById(int id) {
+//
+//        for (int i = 0; i < bookList.size(); i++) {
+//            if (bookList.get(i).id == id) {
+//                return bookList.get(i);
+//            }
+//        }
+//        return null;
+//    }
 
 }

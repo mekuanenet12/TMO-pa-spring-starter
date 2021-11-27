@@ -36,7 +36,7 @@ public class BookController {
     @RequestMapping(method = RequestMethod.DELETE, value = "/api/books")
     public ResponseEntity<Book> deleteAll() {
         bookService.deleteAllBooks();
-        return new ResponseEntity<Book>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
     /// to post
 //	@RequestMapping(method = RequestMethod.POST, value = "/api/books")
@@ -45,5 +45,4 @@ public class BookController {
 //		bookService.addToList(book);
 //		return new ResponseEntity<>(bookService.getAllBooksSortedByTitle(), HttpStatus.CREATED);
 //	}
-
 }
