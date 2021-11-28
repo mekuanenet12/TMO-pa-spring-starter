@@ -27,7 +27,7 @@ public class BookController {
     }
 
     // get all books sorted alphabetically by title
-    @RequestMapping("/api/books")
+    @RequestMapping(method = RequestMethod.GET, value = "/api/books")
     public ResponseEntity<List<Book>> getListOfBooks() {
         return new ResponseEntity<>(bookService.getAllBooksSortedByTitle(), HttpStatus.OK);
     }
