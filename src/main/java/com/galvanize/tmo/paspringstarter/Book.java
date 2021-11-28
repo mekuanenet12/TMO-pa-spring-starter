@@ -5,14 +5,14 @@ public class Book {
     int id;
     String author;
     String title;
-    int yearsPublished;
+    int yearPublished;
 
-    public Book(int id, String author, String title, int yearsPublished) {
+    public Book(int id, String author, String title, int yearPublished) {
         super();
         this.id = id;
         this.author = author;
         this.title = title;
-        this.yearsPublished = yearsPublished;
+        this.yearPublished = yearPublished;
     }
 
     public int getId() {
@@ -40,11 +40,11 @@ public class Book {
     }
 
     public int getYearsPublished() {
-        return yearsPublished;
+        return yearPublished;
     }
 
-    public void setYearsPublished(int yearsPublished) {
-        this.yearsPublished = yearsPublished;
+    public void setYearsPublished(int yearPublished) {
+        this.yearPublished = yearPublished;
     }
 
 }
