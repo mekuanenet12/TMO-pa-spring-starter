@@ -21,14 +21,14 @@ public class BookController {
     // to post
     @RequestMapping(method = RequestMethod.POST, value = "/api/books")
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
-        book.id = bookService.bookList.size() + 1;
+        book.id = bookService.bm.books.size() + 1;
         bookService.addToList(book);
         return new ResponseEntity<>(book, HttpStatus.CREATED);
     }
 
     // get all books sorted alphabetically by title
     @RequestMapping(method = RequestMethod.GET, value = "/api/books")
-    public ResponseEntity<List<Book>> getListOfBooks() {
+    public ResponseEntity<BooksManager> getListOfBooks() {
         return new ResponseEntity<>(bookService.getAllBooksSortedByTitle(), HttpStatus.OK);
     }
 

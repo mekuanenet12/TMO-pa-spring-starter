@@ -10,23 +10,23 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookService {
 
-    public List<Book> bookList = new ArrayList<>();
+    public BooksManager bm = new BooksManager();
 
     // post one
     public void addToList(Book book) {
 
-        bookList.add(book);
+        bm.books.add(book);
     }
 
     // get all sorted by book title
-    public List<Book> getAllBooksSortedByTitle() {
-        Collections.sort(bookList, new BookComparator());
-        return bookList;
+    public BooksManager getAllBooksSortedByTitle() {
+        Collections.sort(bm.books, new BookComparator());
+        return bm;
     }
 
     // to delete all
     public void deleteAllBooks() {
-        bookList.clear();
+        bm.books.clear();
     }
 
 //    public Book getBookById(int id) {
